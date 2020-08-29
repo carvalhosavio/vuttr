@@ -55,4 +55,16 @@ public class ToolsController {
         return ResponseEntity.notFound().build();
     }
 
+    @DeleteMapping("{id}")
+    @Transactional
+    public ResponseEntity<?> deletar(@PathVariable Long id){
+        Optional<Tools> tools = repository.findById(id);
+        if (tools.isPresent()){
+            repository.deleteById(id);
+            return ResponseEntity.noContent().build();
+        }
+
+        return ResponseEntity.notFound().build();
+    }
+
 }
