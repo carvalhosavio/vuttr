@@ -1,5 +1,6 @@
 package br.com.vuttr.api.config.swagger;
 
+import br.com.vuttr.api.model.Usuario;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -25,6 +26,7 @@ public class SwaggerConfiguration {
                 .paths(PathSelectors.ant("/**"))
                 .build()
                 .apiInfo(apiInfo())
+                .ignoredParameterTypes(Usuario.class)
                 .globalOperationParameters(Arrays.asList(
                         new ParameterBuilder()
                         .name("Authorization")
