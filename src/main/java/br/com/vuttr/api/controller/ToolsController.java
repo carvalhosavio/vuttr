@@ -25,9 +25,15 @@ public class ToolsController {
     private ToolsRepository repository;
 
     @GetMapping
-    public Page<ToolsDto> listar(Pageable page){
-        Page<Tools> tools = repository.findAll(page);
-        return ToolsDto.converter(tools);
+    public Page<ToolsDto> listarTodos(@RequestParam(required = false) String tag,Pageable page){
+        if(tag == null){
+            Page<Tools> tools = repository.findAll(page);
+            return ToolsDto.converter(tools);
+        }else {
+            Page<Tools> tools = repository.findByTags(tag,page);
+            return ToolsDto.converter(tools);
+        }
+
     }
 
     @PostMapping
@@ -48,6 +54,5 @@ public class ToolsController {
 
         return ResponseEntity.notFound().build();
     }
-
 
 }
