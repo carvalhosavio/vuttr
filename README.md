@@ -4,7 +4,7 @@
 Aceitei o desafio da Bossabox em construir uma API e banco de dados para a aplicação VUTTR (Very Useful Tools to Remember). A aplicação é um simples repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags.
 
 ### Sobre o desenvolvimento
-- Progeto foi desenvolvido utilizando o framework Spring.
+- Progeto foi desenvolvido utilizando o Spring Boot.
 - Persistencia de dados feita com Spring Data Jpa e banco de dados Mysql.
 - Versionamento de codigo com git.
 - Autenticação com JWT (JsonWebToken)
@@ -50,7 +50,7 @@ ex. GET/tools/:id
 - Cadastrar uma nova ferramenta
 ex. POST/tools 
 
-Content-Type: application/json  Authorization Bearer Token
+Content-Type: application/json -- Authorization Bearer Token
 
 {
     "title": "hotel",
@@ -60,6 +60,7 @@ Content-Type: application/json  Authorization Bearer Token
 }
 
 - Autenricação 
+
 ex. POST/auth
 {
   "username": "string",
@@ -83,6 +84,6 @@ password: 1234
 
 
 ##  Contate-me :speech_balloon:
-[![Twitter Badge](https://img.shields.io/badge/-@ashwanisng-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/ashwanisng)](https://twitter.com/_saviocarvalho_) [![Linkedin Badge](https://img.shields.io/badge/-ashwanisng-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/ashwanisng/)](https://www.linkedin.com/in/saviocarvalho/) [![Gmail Badge](https://img.shields.io/badge/-ashwanicena5@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:ashwanicena5@gmail.com)](mailto:savio.carvalhox@gmail.com) [![Instagram Badge](https://img.shields.io/badge/-@ashwanisng-e4405f?style=flat-square&labelColor=f94877&logo=instagram&logoColor=white&link=https://www.instagram.com/ashwanisng/)](https://www.instagram.com/saviocarvalho__/)
+[![Twitter Badge](https://img.shields.io/badge/-@ashwanisng-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/_saviocarvalho_)](https://twitter.com/_saviocarvalho_) [![Linkedin Badge](https://img.shields.io/badge/-ashwanisng-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/saviocarvalho/)](https://www.linkedin.com/in/saviocarvalho/) [![Gmail Badge](https://img.shields.io/badge/-ashwanicena5@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:savio.carvalhox@gmail.com)](mailto:savio.carvalhox@gmail.com) [![Instagram Badge](https://img.shields.io/badge/-@ashwanisng-e4405f?style=flat-square&labelColor=f94877&logo=instagram&logoColor=white&link=https://www.instagram.com/saviocarvalho__/)](https://www.instagram.com/saviocarvalho__/)
 
 
