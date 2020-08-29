@@ -1,5 +1,6 @@
 package br.com.vuttr.api.controller;
 
+import br.com.vuttr.api.controller.dto.ToolsDetalhesDto;
 import br.com.vuttr.api.controller.dto.ToolsDto;
 import br.com.vuttr.api.controller.form.ToolsForm;
 import br.com.vuttr.api.model.Tools;
@@ -13,7 +14,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
 import java.net.URI;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/tools")
@@ -34,6 +37,16 @@ public class ToolsController {
         repository.save(tools);
         URI uri = uriBuilder.path("/tools/{id}").buildAndExpand(tools.getId()).toUri();
         return ResponseEntity.created(uri).body(new ToolsDto(tools));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ToolsDetalhesDto> detales(@PathVariable Long id){
+        Optional<Tools> tools = repository.findById(id);
+        if(tools.isPresent()){
+            return ResponseEntity.ok(new ToolsDetalhesDto(tools.get()));
+        }
+
+        return ResponseEntity.notFound().build();
     }
 
 
