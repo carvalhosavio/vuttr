@@ -1,7 +1,6 @@
 package br.com.vuttr.api.config.security;
 
 import br.com.vuttr.api.model.Usuario;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -26,13 +25,10 @@ public class AutenticacaoTokenFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
 
         String token = recuperarToken(request);
-
         boolean valido = service.isTokenValido(token);
-
         if (valido) {
             autenticarCliente(token);
         }
-
         filterChain.doFilter(request, response);
     }
 
