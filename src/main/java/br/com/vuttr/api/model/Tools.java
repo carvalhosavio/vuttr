@@ -1,8 +1,8 @@
 package br.com.vuttr.api.model;
 
 import lombok.Data;
-
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -11,12 +11,13 @@ public class Tools {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
+    @Column(nullable = false)
     private String title;
-    @Column
+    @Column(nullable = false)
     private String link;
-    @Column
+    @Column(nullable = false)
     private String description;
-    @Column
-    private String tags;
+    @ElementCollection
+    @Column(nullable = false)
+    private List<String> tags;
 }
