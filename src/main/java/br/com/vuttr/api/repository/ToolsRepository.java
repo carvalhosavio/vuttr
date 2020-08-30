@@ -8,7 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ToolsRepository extends JpaRepository<Tools,Long> {
-
     Page<Tools> findByTags(String tag, Pageable page);
-
 }

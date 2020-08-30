@@ -12,10 +12,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import javax.transaction.Transactional;
 import javax.validation.Valid;
-import javax.websocket.server.PathParam;
 import java.net.URI;
 import java.util.Optional;
 
@@ -35,7 +33,6 @@ public class ToolsController {
             Page<Tools> tools = repository.findByTags(tag,page);
             return ToolsDto.converter(tools);
         }
-
     }
 
     @PostMapping
@@ -53,7 +50,6 @@ public class ToolsController {
         if(tools.isPresent()){
             return ResponseEntity.ok(new ToolsDetalhesDto(tools.get()));
         }
-
         return ResponseEntity.notFound().build();
     }
 
@@ -65,7 +61,6 @@ public class ToolsController {
             repository.deleteById(id);
             return ResponseEntity.noContent().build();
         }
-
         return ResponseEntity.notFound().build();
     }
 

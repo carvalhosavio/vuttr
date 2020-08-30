@@ -47,16 +47,12 @@ public class TokenService {
         } catch (Exception e) {
             return false;
         }
-
     }
 
     public Usuario getUsuario(String token) {
         Claims claims = Jwts.parser().setSigningKey(this.secret).parseClaimsJws(token).getBody();
-
         Long idUsuario = Long.parseLong(claims.getSubject());
-
         Optional<Usuario> usuario = repository.findById(idUsuario);
-
         return usuario.get();
     }
 

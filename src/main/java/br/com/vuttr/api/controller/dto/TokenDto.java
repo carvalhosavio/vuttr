@@ -1,8 +1,11 @@
 package br.com.vuttr.api.controller.dto;
 
+import lombok.Getter;
 
 public class TokenDto {
+    @Getter
     private String token;
+    @Getter
     private String tipo;
 
     public TokenDto(String token, String tipo) {
@@ -10,11 +13,4 @@ public class TokenDto {
         this.tipo = tipo;
     }
 
-    public String getToken() {
-        return token;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
 }
