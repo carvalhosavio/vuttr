@@ -1,6 +1,5 @@
 package br.com.vuttr.api.controller;
 
-
 import br.com.vuttr.api.config.security.TokenService;
 import br.com.vuttr.api.controller.dto.TokenDto;
 import br.com.vuttr.api.controller.form.LoginForm;
@@ -10,12 +9,10 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.validation.Valid;
 
 @RestController
@@ -31,7 +28,6 @@ public class AutenticacaoController {
     @PostMapping
     public ResponseEntity<?> autenticar(@RequestBody @Valid LoginForm form){
         UsernamePasswordAuthenticationToken login = form.converter();
-
         try {
             Authentication authentication = manager.authenticate(login);
             String token = tokenService.gerarToken(authentication);

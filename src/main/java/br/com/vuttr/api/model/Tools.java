@@ -1,12 +1,17 @@
 package br.com.vuttr.api.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Data
+@Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "tools")
 public class Tools {
@@ -22,10 +27,6 @@ public class Tools {
     @ElementCollection
     @Column(nullable = false)
     private List<String> tags;
-
-    public Tools(){
-
-    }
 
     public Tools(String title, String link, String description, List<String> tags) {
         super();

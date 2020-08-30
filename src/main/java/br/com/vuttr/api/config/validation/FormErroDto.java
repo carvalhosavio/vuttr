@@ -12,7 +12,6 @@ public class FormErroDto {
     public String getCampo() {
         return campo;
     }
-
     public String getErro() {
         return erro;
     }
