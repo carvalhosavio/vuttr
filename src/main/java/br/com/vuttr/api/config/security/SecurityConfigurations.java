@@ -42,6 +42,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers(HttpMethod.GET,"/tools").permitAll()
                 .antMatchers(HttpMethod.POST,"/pipefy").permitAll()
+                .antMatchers(HttpMethod.GET,"/pipefy").permitAll()
                 .antMatchers(HttpMethod.GET,"/tools/**").permitAll()
                 .antMatchers(HttpMethod.POST,"/auth").permitAll()
                 .anyRequest().authenticated()
