@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
 public class LoginForm {
     @NotBlank @NotNull @Size(min = 6, max = 30)
     private String username;
-    @NotBlank @NotNull @Min(8)
+    @NotBlank @NotNull
     private String password;
 
     public UsernamePasswordAuthenticationToken converter() {

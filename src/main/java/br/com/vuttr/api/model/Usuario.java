@@ -1,5 +1,6 @@
 package br.com.vuttr.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,9 +26,16 @@ public class Usuario implements UserDetails {
     @Column(nullable = false)
     private String username;
     @Column(nullable = false)
+    @JsonIgnore
     private String password;
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Perfil> perfis = new ArrayList<>();
+
+    public Usuario(String username, String password) {
+        this.password = password;
+        this.username = username;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -4,45 +4,7 @@
 Aceitei o desafio da Bossabox em construir uma API e banco de dados para a aplicação VUTTR (Very Useful Tools to Remember). A aplicação é um simples repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags.
 
 ### Sobre o desenvolvimento
-<<<<<<< HEAD
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/spring-boot/spring-boot.png"></code>
-Progeto foi desenvolvido utilizando o framework Spring.
-
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png"></code>
-Persistencia de dados feita com Spring Data Jpa e banco de dados Mysql.
-
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"></code>
-Versionamento do codigo com git.
-
-Deploy realizado no heroku e documentado com swagger [Link](https://vuttr-api-tools.herokuapp.com/swagger-ui.html)
-
-### Rotas
-
-## GET
-
-- Paginação 
-ex. [GET]/tools?page=0&size=10 
-
-- Ordenação
-ex. [GET]/tools?sort=title,asc&sort=id,desc
-
-- Busca por tags
-ex. [GET]/tools?tag=node   (node é a tag sendo buscada neste exemplo)
-
-- Busca por tags com paginação e ordenação
-ex. [GET]/tools?tag=node&page=0&size=10&sort=title,asc&sort=id,desc
-
-- Buscar por id 
-ex. [GET]/tools/:id
-
-## POST
-
-- Cadastrar uma nova ferramenta
-ex. [POST]/tools 
-
-Content-Type: application/json
-=======
-- Progeto foi desenvolvido utilizando o Spring Boot.
+- Projeto foi desenvolvido utilizando o Spring Boot.
 - Persistencia de dados feita com Spring Data Jpa e banco de dados Mysql.
 - Versionamento de codigo com git.
 - Autenticação com JWT (JsonWebToken)
@@ -89,7 +51,6 @@ ex. GET/tools/:id
 ex. POST/tools 
 
 Content-Type: application/json -- Authorization Bearer Token
->>>>>>> master
 
 {
     "title": "hotel",
@@ -98,15 +59,6 @@ Content-Type: application/json -- Authorization Bearer Token
      "tags":["node", "organizing", "webapps", "domain", "developer", "https", "proxy"]
 }
 
-<<<<<<< HEAD
-## DELETE
-
--- Remover uma ferramenta por ID
-ex. [DELETE]/tools/:id
-
-
-
-=======
 - Autenricação 
 
 ex. POST/auth
@@ -133,6 +85,5 @@ password: 1234
 
 ##  Contate-me :speech_balloon:
 [![Twitter Badge](https://img.shields.io/badge/-@_saviocarvalho_-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/_saviocarvalho_)](https://twitter.com/_saviocarvalho_) [![Linkedin Badge](https://img.shields.io/badge/-saviocarvalho-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/saviocarvalho/)](https://www.linkedin.com/in/saviocarvalho/) [![Gmail Badge](https://img.shields.io/badge/-savio.carvalhox@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:savio.carvalhox@gmail.com)](mailto:savio.carvalhox@gmail.com) [![Instagram Badge](https://img.shields.io/badge/-@saviocarvalho__-e4405f?style=flat-square&labelColor=f94877&logo=instagram&logoColor=white&link=https://www.instagram.com/saviocarvalho__/)](https://www.instagram.com/saviocarvalho__/)
->>>>>>> master
 
 

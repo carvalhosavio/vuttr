@@ -26,19 +26,23 @@ public class ToolsController {
     @GetMapping
     @ApiOperation( value = "Listar todos as feramenstas e filtar por tag")
     public Page<ToolsDto> listarTodos(@RequestParam(required = false) String tag,Pageable page){
+        Page<Tools> tools;
         if(tag == null){
-            Page<Tools> tools = repository.findAll(page);
-            return ToolsDto.converter(tools);
+            tools = repository.findAll(page);
         }else {
-            Page<Tools> tools = repository.findByTags(tag,page);
-            return ToolsDto.converter(tools);
+            tools = repository.findByTags(tag, page);
         }
+        return ToolsDto.converter(tools);
     }
 
     @PostMapping
     @Transactional
-    public ResponseEntity<ToolsDto> cadastrar(@RequestBody @Valid ToolsForm form, UriComponentsBuilder uriBuilder){
+    public ResponseEntity<?> cadastrar(@RequestBody @Valid ToolsForm form, UriComponentsBuilder uriBuilder){
         Tools tools = form.converter();
+        Optional<Tools> title = repository.findByTitle(form.getTitle());
+        if(title.isPresent()){
+            return ResponseEntity.badRequest().body("Já existe uma ferramenta com o title " + form.getTitle() + " cadastrada");
+        }
         repository.save(tools);
         URI uri = uriBuilder.path("/tools/{id}").buildAndExpand(tools.getId()).toUri();
         return ResponseEntity.created(uri).body(new ToolsDto(tools));
