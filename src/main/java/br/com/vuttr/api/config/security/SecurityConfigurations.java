@@ -45,6 +45,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET,"/pipefy").permitAll()
                 .antMatchers(HttpMethod.GET,"/tools/**").permitAll()
                 .antMatchers(HttpMethod.POST,"/auth").permitAll()
+                .antMatchers(HttpMethod.POST,"/user").permitAll()
                 .anyRequest().authenticated()
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
