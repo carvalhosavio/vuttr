@@ -20,7 +20,6 @@ Aceitei o desafio da Bossabox em construir uma API e banco de dados para a aplic
 <code><img height="20" src="https://camo.githubusercontent.com/74d9eb8a0b1aacf85908bdfe799cfe3982006672/687474703a2f2f7374617469632e6a626f73732e6f72672f68696265726e6174652f696d616765732f68696265726e6174655f6c6f676f5f7768697465626b675f32303070782e706e67"></code>
 
 
-
 ### Rotas
 
 ### GET
@@ -77,11 +76,14 @@ ex. DELETE/tools/:id
 ### Autenticação
 
 Rotas POST e DELETE requerem autenticação tipo Bearer Token no cabeçalho Authorization.
-Token pode ser obtido na rota /auth, conforme ex, acima. 
-username: administrador
-password: 1234
+Utilize a rota /user, para criação de usuario, ex: username: admin, password: 1234.
+Token pode ser obtido na rota /auth, informando username e password cadastrodo conforme acima. 
 
+### Rodando API localmente
 
+Para rodar API localmente é necessario ter JRE e JDK versão 8 devidamente instalados e configurados.
+[Instalação JRE e JDK](https://medium.com/@mauriciogeneroso/configurando-java-1-instala%C3%A7%C3%A3o-do-jre-e-do-jdk-no-windows-38cacace0377)
+[configurar as variáveis JAVA_HOME](https://medium.com/@mauriciogeneroso/configurando-java-4-como-configurar-as-vari%C3%A1veis-java-home-path-e-classpath-no-windows-46040950638f)
 
 ##  Contate-me :speech_balloon:
 [![Twitter Badge](https://img.shields.io/badge/-@_saviocarvalho_-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/_saviocarvalho_)](https://twitter.com/_saviocarvalho_) [![Linkedin Badge](https://img.shields.io/badge/-saviocarvalho-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/saviocarvalho/)](https://www.linkedin.com/in/saviocarvalho/) [![Gmail Badge](https://img.shields.io/badge/-savio.carvalhox@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:savio.carvalhox@gmail.com)](mailto:savio.carvalhox@gmail.com) [![Instagram Badge](https://img.shields.io/badge/-@saviocarvalho__-e4405f?style=flat-square&labelColor=f94877&logo=instagram&logoColor=white&link=https://www.instagram.com/saviocarvalho__/)](https://www.instagram.com/saviocarvalho__/)
