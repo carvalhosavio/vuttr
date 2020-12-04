@@ -4,7 +4,7 @@
 Aceitei o desafio da Bossabox em construir uma API e banco de dados para a aplicação VUTTR (Very Useful Tools to Remember). A aplicação é um simples repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags.
 
 ### Sobre o desenvolvimento
-- Progeto foi desenvolvido utilizando o Spring Boot.
+- Projeto foi desenvolvido utilizando o Spring Boot.
 - Persistencia de dados feita com Spring Data Jpa e banco de dados Mysql.
 - Versionamento de codigo com git.
 - Autenticação com JWT (JsonWebToken)
