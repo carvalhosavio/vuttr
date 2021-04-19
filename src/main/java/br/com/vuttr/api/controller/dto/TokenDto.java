@@ -8,15 +8,15 @@ public class TokenDto {
     @Getter
     private String tipo;
     @Getter
-    private String usermane;
+    private String username;
     @Getter
     private String email;
 
-    public TokenDto(String token, String tipo,String email, String usermane) {
+    public TokenDto(String token, String tipo,String email, String username) {
         this.token = token;
         this.tipo = tipo;
         this.email = email;
-        this.usermane = usermane;
+        this.username = username;
     }
 
 }
