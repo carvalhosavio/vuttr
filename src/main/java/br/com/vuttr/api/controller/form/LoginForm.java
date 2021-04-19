@@ -13,11 +13,11 @@ import javax.validation.constraints.*;
 @NoArgsConstructor
 public class LoginForm {
     @NotBlank @NotNull @Size(min = 6, max = 30)
-    private String username;
+    private String email;
     @NotBlank @NotNull
     private String password;
 
     public UsernamePasswordAuthenticationToken converter() {
-        return new UsernamePasswordAuthenticationToken(username,password);
+        return new UsernamePasswordAuthenticationToken(email,password);
     }
 }

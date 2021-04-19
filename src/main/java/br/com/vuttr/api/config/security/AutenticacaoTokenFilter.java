@@ -1,6 +1,7 @@
 package br.com.vuttr.api.config.security;
 
 import br.com.vuttr.api.model.Usuario;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ public class AutenticacaoTokenFilter extends OncePerRequestFilter {
 
     private final TokenService service;
 
+    @Autowired
     public AutenticacaoTokenFilter(TokenService service) {
         this.service = service;
     }

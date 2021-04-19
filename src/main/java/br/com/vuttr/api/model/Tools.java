@@ -12,7 +12,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tools")
 public class Tools {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +22,7 @@ public class Tools {
     private String link;
     @Column(nullable = false)
     private String description;
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.LAZY)
     @Column(nullable = false)
     private List<String> tags;
 
