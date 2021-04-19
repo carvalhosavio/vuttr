@@ -18,11 +18,14 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private AutenticacaoService service;
+    private final AutenticacaoService service;
+    private final TokenService tokenService;
 
     @Autowired
-    private TokenService tokenService;
+    public SecurityConfigurations(AutenticacaoService service, TokenService tokenService) {
+        this.service = service;
+        this.tokenService = tokenService;
+    }
 
     @Override
     @Bean
@@ -30,18 +33,18 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-    //Configuraçoes de autenticaçao
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(service).passwordEncoder(new BCryptPasswordEncoder());
     }
 
-    //Configuraçoes de autorização
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.cors().and();
         http.authorizeRequests()
                 .antMatchers(HttpMethod.GET,"/tools").permitAll()
                 .antMatchers(HttpMethod.GET,"/tools/**").permitAll()
+                .antMatchers(HttpMethod.POST,"/tools/**").permitAll()
                 .antMatchers(HttpMethod.POST,"/auth").permitAll()
                 .antMatchers(HttpMethod.POST,"/user").permitAll()
                 .anyRequest().authenticated()
@@ -50,10 +53,11 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
                 .and().addFilterBefore(new AutenticacaoTokenFilter(tokenService), UsernamePasswordAuthenticationFilter.class);
     }
 
-    //Configurações de recursos estaticos(js, css, images, etc...)
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/**.html","/v2/api-docs","/webjars/**","/configuration/**","/swagger-resources/**","/swagger-ui.html","/v2/**");
     }
+
+
 
 }
