@@ -31,9 +31,9 @@ public class AutenticacaoController {
         try {
             Authentication authentication = manager.authenticate(login);
             String token = tokenService.gerarToken(authentication);
-            return ResponseEntity.ok(new TokenDto(token,"Bearer"));
+            return ResponseEntity.ok(new TokenDto(token,"Bearer", form.getEmail(),authentication.getName()));
         }catch (AuthenticationException ex){
-            return ResponseEntity.badRequest().body(ex);
+            return ResponseEntity.badRequest().body(ex.getMessage());
         }
 
     }

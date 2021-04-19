@@ -7,10 +7,16 @@ public class TokenDto {
     private String token;
     @Getter
     private String tipo;
+    @Getter
+    private String usermane;
+    @Getter
+    private String email;
 
-    public TokenDto(String token, String tipo) {
+    public TokenDto(String token, String tipo,String email, String usermane) {
         this.token = token;
         this.tipo = tipo;
+        this.email = email;
+        this.usermane = usermane;
     }
 
 }
